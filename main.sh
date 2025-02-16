@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path ke file yang akan dimodifikasi
-FILE_PATH="app/Http/Controllers/Admin/UserController.php"
+FILE_PATH="/var/www/pterodactyl/app/Http/Controllers/Admin/UserController.php"
 BACKUP_PATH="${FILE_PATH}.backup"
 
 # Tampilkan menu pilihan
