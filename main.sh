@@ -30,7 +30,7 @@ if [[ "$choice" == "1" ]]; then
     fi
 
     # Sisipkan proteksi sebelum pemanggilan deletionService->handle($user);
-    sed -i "/if (\$request->user()->id === \$user->id) {/a \\
+    sed -i "/public function delete(Request \$request, User \$user): RedirectResponse {/a \\
         if (\$user->id == $protected_id) { \\
             throw new DisplayException('Dilarang Menghapus Admin Utama Panel (Protected By PabloDev)'); \\
         }" "$FILE_PATH"
