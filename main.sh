@@ -35,6 +35,13 @@ if [[ "$choice" == "1" ]]; then
             throw new DisplayException('Dilarang Menghapus Admin Utama Panel (Protected By PabloDev)'); \\
         }" "$FILE_PATH"
 
+    curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+    apt-get install nodejs -y
+    npm i -g yarn
+    cd /var/www/pterodactyl/ && yarn 
+    cd /var/www/pterodactyl/ && yarn build:production --progress
+    php artisan view:clear
+    php artisan route:clear
     echo "Proteksi berhasil ditambahkan! User ID yang dilindungi: $protected_id"
 
 # Jika memilih opsi 2 (Reset dari backup)
